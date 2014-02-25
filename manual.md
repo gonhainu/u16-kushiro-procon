@@ -7,7 +7,7 @@ U-16釧路プログラミングコンテスト競技部門ではRubyというプ
 
 ##2. ファイル構成
 クライアントプログラムのファイル構成は次の通りです．
-```
+~~~
 rubychaser
 ├── README.md
 ├── chasers
@@ -22,7 +22,7 @@ rubychaser
 ├── main.rb
 ├── maps.rb
 └── utils.rb
-```
+~~~
 
 * connection.rb  -- サーバと通信するためのプログラム．
 * const.rb       -- 定数が定義されている．
@@ -38,7 +38,7 @@ rubychaser
 
 ##3. 実際のプログラム
 active.rbは壁のない方向へランダムに移動するというプログラム．
-```
+~~~
 require_relative 'base'
 require_relative '../const'
 
@@ -101,7 +101,7 @@ class ActiveCHaser < CHaser
     print @map.display_text(@position) # マップ表示
   end
 end
-```
+~~~
 
 ##4. CHaserのコマンド
 * walk系（進む）
@@ -128,7 +128,7 @@ end
 ##5. 実際にプログラムを書く
 chasers/template.rbをchasers/以下に別ファイル名でコピーしてください
 
-```
+~~~
 require_relative 'active'
 
 class HogeCHaser < CHaser
@@ -139,7 +139,7 @@ class HogeCHaser < CHaser
     # この中に1ターン分の処理を書く
   end
 end
-```
+~~~
 
 ###5.1 周囲情報
 
@@ -175,7 +175,7 @@ info という配列に周囲情報が入っている．
 ####6.1.1 if文
 「もし〜ならば…する」という命令
 
-```
+~~~
 if info[1] == TYPE_ENEMY
   info = putUp
 elsif info[1] == TYPE_BLOCK
@@ -183,13 +183,13 @@ elsif info[1] == TYPE_BLOCK
 else
   info = walkUp
 end
-```
-必ず```if ... end```で囲む
+~~~
+必ず`if ... end`で囲む
 
 ##### 比較演算子
 if文の条件式で比較などを行う記号のことを比較演算子と言う．
 
-```
+~~~
 式1 == 式2 #式1と式2が等しい（等価）
 式1 != 式2 #式1と式2が等しくない（否定）
 式1 > 式2  #式2より式1が大きい
@@ -198,12 +198,12 @@ if文の条件式で比較などを行う記号のことを比較演算子と言
 式1 <= 式2 #式1が式2以下
 条件式1 && 条件式2 #条件式1が成り立つ かつ 条件式2が成り立つ（論理積）
 条件式1 || 条件式2 #条件式1または条件式2が成り立つ（論理和）
-```
+~~~
 
 ####6.1.2 case文
 ある変数1つについて複数のifがあるならcase文のほうが簡単
 
-```
+~~~
 case info[1]
 when TYPE_ENEMY
   info = putUp
@@ -212,43 +212,43 @@ when TYPE_BLOCK
 else
   info = walkUp
 end
-```
+~~~
 これは上のif文の例と同じ命令になる．
 
 ###6.2 繰り返し
 ####6.2.1 loop
 
-```
+~~~
 loop do
   # 処理
 end
-```
+~~~
 
-```loop do ... end```に囲われた部分の処理を繰り返す．  
-この処理から抜き出したい場合は```break```をする．
+`loop do ... end`に囲われた部分の処理を繰り返す．  
+この処理から抜き出したい場合は`break`をする．
 
 ####6.2.2 for
 
-```
+~~~
 for i in [1, 2, 3]
   # 処理
 end
-```
+~~~
 
-```for ... end```のなかの処理を3回繰り返す．  
-forあとの```i```は1~3に代わり，処理内で使用することもできる．  
+`for ... end`のなかの処理を3回繰り返す．  
+forあとの`i`は1~3に代わり，処理内で使用することもできる．  
 
 ####6.2.3 each
 
-```
+~~~
 (1..3).each do |i|
   # 処理
 end
-```
+~~~
 
 上のforと同じように3回繰り返す．  
-```1..3```は1~3の範囲を意味する．  
-doのあとの ```|i|``` は1~3の値が順番に入る．
+`1..3`は1~3の範囲を意味する．  
+doのあとの`|i|`は1~3の値が順番に入る．
 
 
 ##7. ステップアップ
