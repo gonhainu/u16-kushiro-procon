@@ -270,5 +270,5 @@ doのあとの`|i|`は1~3の値が順番に入る．
 隣に敵がいるときブロックを置こう
 
 ##更新履歴
-2014/03/11 "Rubyとは"を追加: Nobuyuki SAKAI
+2014/03/11 "Rubyとは"を追加: Nobuyuki SAKAI  
 2014/03/04 ロゴを追加: Nobuyuki SAKAI
